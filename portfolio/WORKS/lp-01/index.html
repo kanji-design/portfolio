@@ -11,6 +11,9 @@
 
 
 </head>
+
+
+
 <body>
 
     <header class="header">
@@ -66,7 +69,7 @@
 
              <div class="feature-heading">
                  <p class="section-label">WHY CHOOSE US</p>
-                 <h2 class="feature-title">Stronger Than Yesterday.</h2>
+                 <h2 class="feature-title"><span class="accent-word">Stronger Than</span> Yesterday.</span></h2>
                  <p class="feature-lead">
                    昨日の自分を超えるために、トレーニングを感覚で終わらせない。
                  </p>
@@ -154,6 +157,25 @@
     <footer>
         <p>&copy D J Maximum GYM</p>
     </footer>
+
+    <script>
+  const featureSection = document.querySelector('.feature');
+
+  if (featureSection) {
+    const featureObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          featureSection.classList.add('is-visible');
+          featureObserver.unobserve(featureSection);
+        }
+      });
+    }, {
+      threshold: 0.28
+    });
+
+    featureObserver.observe(featureSection);
+  }
+</script>
 
 </body>
 </html>
