@@ -689,132 +689,196 @@ body{
     transform: translateY(-8px) scale(1.012);
 }
 
-
-section>*{
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+.program {
+    position: relative;
+    overflow: hidden;
+    background: #020202;
+    color: #fff;
+    min-height: 100vh;
+    padding: 92px 20px 80px;
+    isolation: isolate;
 }
 
+.program-inner {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    z-index: 2;
+}
 
-section h2{
+.program-head {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    font-weight: 800;
+    color: rgba(255, 28, 28, 0.9);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.program-title {
+    font-size: clamp(42px, 6vw, 82px);
+    line-height: 0.88;
+    letter-spacing: -0.07em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    color: rgba(255,255,255,0.96);
+    text-shadow:
+        0 0 18px rgba(255,0,0,0.22),
+        0 0 60px rgba(255,0,0,0.12);
+}
+
+.program-lead {
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.72);
+}
+
+.program-content {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.program-point {
+    position: relative;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+}
+
+.program-point:first-child {
+    border-top: 1px solid rgba(255,255,255,0.09);
+}
+
+.program-number {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: rgba(255, 35, 35, 0.95);
+    font-weight: 900;
+    padding-top: 4px;
+    text-shadow: 0 0 18px rgba(255,0,0,0.45);
+}
+
+.program-point h3 {
+    font-size: 19px;
+    margin-bottom: 6px;
+    color: rgba(255,255,255,0.94);
+}
+
+.program-point p {
     margin-top: 0;
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.62);
 }
 
-h1{
-    font-size: clamp(40px, 6vw, 72px);
-    letter-spacing: 0.02em;
+.program-flow {
+    position: relative;
+    margin-top: 30px;
+    padding: 28px 30px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background:
+        linear-gradient(135deg, rgba(255,0,0,0.15), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)),
+        rgba(0,0,0,0.62);
+    box-shadow:
+        0 24px 80px rgba(0,0,0,0.7),
+        inset 0 0 42px rgba(255,255,255,0.025),
+        0 0 36px rgba(255,0,0,0.08);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
-h2{
-    font-size: 33px;
-    margin-bottom: 24px;
-    margin-top: 8px;
+.program-flow-head {
+    margin-bottom: 20px;
 }
-h3{
-    font-size: 21px;
+
+.program-flow-head span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: rgba(255, 35, 35, 0.86);
+    font-weight: 800;
     margin-bottom: 8px;
 }
-p{
-    line-height: 1.8;
-    color: var(--text-sub);
-    margin-top: 8px;
-}
-.about{
-    background-color: #111;
-    color: #fff;
-    background: #111;
-}
-.program{
-    background-color: #111;
-    color: #fff;
-    padding: 80px 20px;
-    overflow: hidden;
-    background: #0f0f0f;
+
+.program-flow h3 {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 0;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.94);
 }
 
-.program h2{
-    margin-top: 0;
+.program-flow li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 13px;
+    line-height: 1.6;
+    counter-increment: step;
+    color: rgba(255,255,255,0.72);
+    font-size: 14px;
 }
 
-.program>*:last-child{
+.program-flow li:last-child {
     margin-bottom: 0;
 }
 
-
-.about-lead,
-.program-lead{
-    font-size: 20px;
-    margin-bottom: 40px;
-}
-.about-end{
-    font-size: 24px;
-}
-
-.program-note{
-    margin-top: 40px;
-    font-size: 15px;
-    opacity: 0.7;
-}
-
-.about p,
-.program p{
-    max-width: 880px;
-}
-
-.program-flow{
-    margin-top: 64px;
-    padding: 48px;
-    border: 1px solid rgba(255,255,255,0.15);
-    margin-bottom: 64px;
-}
-.program-flow h3{
-    font-size: 26px;
-    margin-bottom: 32px;
-    letter-spacing: 0.06em;
-    opacity: 0.9;
-}
-
-.program-flow ol{
-    list-style: none;
-    padding-left: 20px;
-    margin: 0;
-    counter-reset: step;
-
-}
-.program-flow li{
+.program-visual {
+    position: sticky;
+    top: 90px;
+    min-height: 560px;
     display: flex;
-    gap: 16px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    counter-increment: step;
-}
-.program-flow li::before{
-    content: counter(step);
-    font-weight: bold;
-    opacity: 0.6;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 1;
 }
 
-.program-content{
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
+.program-visual img {
+    position: relative;
+    z-index: 1;
+    width: min(44vw, 500px);
+    height: 560px;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) brightness(0.58) contrast(1.35);
+    opacity: 0.9;
+    box-shadow:
+        0 40px 120px rgba(0,0,0,0.85),
+        0 0 70px rgba(255,0,0,0.13);
+    mask-image:
+        linear-gradient(to bottom, transparent 0%, black 8%, black 84%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 16%, black 100%);
+    mask-composite: intersect;
 }
 
-.program-visual{
-    width: 100%;
-    height: auto;
-    filter: grayscale(100%);
-    opacity: 0.55;
+.program-note {
+    margin-top: 34px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.46);
 }
 
-.program-visual img{
-    width: 100%;
-    max-width: 420px;
-    margin-left: auto;
-    filter: grayscale(100%);
-    opacity: 0.65;
+@keyframes programPulse {
+    from {
+        opacity: 0.55;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 0.9;
+        transform: scale(1.04);
+    }
 }
+
 
 
 .cta{
@@ -964,6 +1028,120 @@ p{
 
     .feature.is-visible .feature-item:nth-child(3){
         transition-delay: 1.29s;
+    }
+
+    .program {
+        padding: 110px 20px 96px;
+    }
+
+    .program-red-light {
+        right: -70%;
+        top: 28%;
+        width: 620px;
+        height: 620px;
+        opacity: 0.8;
+    }
+
+    .program::after {
+        top: 10%;
+        height: 160px;
+    }
+
+    .program-head {
+        margin-bottom: 54px;
+    }
+
+    .program-title {
+        font-size: clamp(44px, 15vw, 72px);
+        line-height: 0.88;
+        letter-spacing: -0.075em;
+    }
+
+    .program-lead {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    .program-content {
+        position: relative;
+        display: block;
+    }
+
+    .program-visual {
+        position: absolute;
+        right: -34%;
+        top: 120px;
+        min-height: auto;
+        width: 82vw;
+        height: 560px;
+        opacity: 0.42;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .program-visual::before {
+        right: -30%;
+        bottom: 4%;
+        width: 440px;
+        height: 440px;
+    }
+
+    .program-visual::after {
+        display: none;
+    }
+
+    .program-visual img {
+        width: 100%;
+        height: 560px;
+        object-position: center;
+        opacity: 0.9;
+        filter: grayscale(100%) brightness(0.5) contrast(1.35);
+    }
+
+    .program-text {
+        position: relative;
+        z-index: 2;
+    }
+
+    .program-point {
+        grid-template-columns: 38px 1fr;
+        gap: 14px;
+        padding: 22px 0;
+    }
+
+    .program-point h3 {
+        font-size: 19px;
+    }
+
+    .program-point p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .program-flow {
+        margin-top: 52px;
+        padding: 32px 22px;
+        background:
+            linear-gradient(135deg, rgba(255,0,0,0.18), transparent 34%),
+            rgba(0,0,0,0.72);
+    }
+
+    .program-flow h3 {
+        font-size: 25px;
+    }
+
+    .program-flow li {
+        align-items: flex-start;
+        font-size: 14px;
+        gap: 14px;
+    }
+
+    .program-note {
+        position: relative;
+        z-index: 2;
+        margin-top: 62px;
+        font-size: 12px;
+        line-height: 1.8;
     }
 
 
